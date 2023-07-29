@@ -31,7 +31,7 @@ function Project(props) {
     return (
         <div className='project' onClick={setActive} id={props.id}>
             <h2>{props.title}</h2>
-            <img src={props.img} className='image'></img>
+            <img src={props.img} className='image' alt='project'></img>
             <p className='description'>{props.description}</p>
             <div className='background' style={{ backgroundColor: props.backgroundColor }}>
                 <ul className='details'>
@@ -40,8 +40,8 @@ function Project(props) {
                     <li>{props.details[3]}</li>
                 </ul>
                 <div className='links'>
-                    <a href={props.live} target='_blank'>Live</a>
-                    <a href={props.repo} target='_blank'>Repo</a>
+                    <a href={props.live} target='_blank' rel='noreferrer'>Live</a>
+                    <a href={props.repo} target='_blank' rel='noreferrer'>Repo</a>
                 </div>
                 <AiOutlineArrowDown className='close-arrow' id={props.id + 'close-arrow'} onClick={setInactive} />
             </div>

@@ -1,6 +1,5 @@
 import React from 'react'
 import Project from './Project'
-import { MdKeyboardArrowRight } from "react-icons/md";
 
 function Projects() {
 
@@ -104,10 +103,6 @@ function Projects() {
       }
     },
   ]
-
-  const handleScroll = () => {
-
-  }
 
   return (
     <div className='projects-container'>
