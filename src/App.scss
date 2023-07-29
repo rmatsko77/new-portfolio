@@ -12,6 +12,7 @@
 body {
   background-color: #ECD7CD;
   font-family: monospace;
+  overflow: hidden;
 }
 
 a {
@@ -26,27 +27,85 @@ a:visited {
   color: inherit;
 }
 
-.nav-bar {
+.header {
+  position: fixed;
   width: 100%;
-  @include flexCenter();
-  justify-content: space-around;
-  font-size: 1.5rem;
+  height: 6vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2pt solid black;
+  text-align: center;
+
+  h1 {
+    font-size: 4.2vw;
+    font-weight: 800;
+    width: 33.333%;
+  }
+
+  h2 {
+    font-size: 2.5vw;
+    width: 33.333%;
+    font-weight: 400;
+  }
+
+  h3 {
+    font-size: 2.5vw;
+    width: 33.333%;
+    font-weight: 400;
+  }
+
+  .spacer {
+    height: 5vh;
+    width: 0;
+    border: 1pt solid black;
+  }
+}
+
+.projects-container {
+  overflow-x: scroll;
+  overflow-y: hidden;
 }
 
 .projects {
-  padding: 2rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: .5rem;
+  position: relative;
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: start;
   justify-content: center;
+  top: 10vh;
+  width: 150rem;
+  height: 90vh;
+  z-index: 0;
+  scroll-behavior: smooth;
+  overflow: scroll;
+
+  .arrow {
+    position: fixed;
+    right: 2%;
+    top: 33%;
+    font-size: 3rem;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.668);
+    color: #f2f4f3;
+    cursor: pointer;
+    transition: all .25s;
+
+    &:hover {
+      width: 3.2rem;
+      height: 3.2rem;
+      font-size: 3.2rem;
+    }
+  }
 
   .project {
     @include flexCenter();
     position: relative;
     justify-content: space-between;
     flex-direction: column;
-    width: 90%;
-    height: 35vh;
+    height: 40vh;
     margin: 1rem;
     padding: .6rem;
     padding-bottom: 1rem;
@@ -70,13 +129,13 @@ a:visited {
       position: absolute;
       @include flexCenter();
       flex-direction: column;
-      top: 10%;
+      top: 9%;
       width: 100%;
-      height: 35vh;
+      height: 40vh;
       border-radius: 8pt;
       transition: all .5s;
       cursor: auto;
-      z-index: -2;
+      z-index: -1;
 
       .close-arrow {
         text-align: center;
@@ -111,6 +170,7 @@ a:visited {
         display: flex;
         justify-content: space-between;
         width: 60%;
+        z-index: 2;
 
         a {
           @include flexCenter();
@@ -141,7 +201,7 @@ a:visited {
 
   .active {
     &:hover .background {
-      top: 76%;
+      top: 78%;
     }
 
     .background {
@@ -149,6 +209,72 @@ a:visited {
 
       &:hover {
         top: 80%;
+      }
+    }
+  }
+}
+
+.contact {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 0;
+  width: 100%;
+  height: 6vh;
+
+  .link-list {
+    list-style: none;
+    @include flexCenter();
+    border-top: 2pt solid black;
+    width: 100%;
+
+    a {
+      width: 25%;
+      height: 6vh;
+      transition: all .3s;
+      @include flexCenter();
+      font-size: 4vh;
+      cursor: pointer;
+      border: 1pt solid black;
+
+      &:hover {
+        width: 70%;
+        color: #f2f4f3;
+        font-size: 5.5vh;
+      }
+    }
+
+    #linked-in {
+      position: relative;
+
+      &:hover {
+        background-color: #39A0ED;
+      }
+    }
+
+    #github {
+
+      &:hover {
+        background-color: #6F2DBD;
+      }
+
+    }
+
+    #instagram {
+
+      &:hover {
+        background-color: rgb(255, 60, 93);
+      }
+
+    }
+
+    #email {
+      color: black;
+
+      &:hover {
+        background-color: #6AB547;
+        color: #f2f4f3;
       }
     }
   }

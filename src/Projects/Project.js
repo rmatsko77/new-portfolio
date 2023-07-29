@@ -21,10 +21,8 @@ function Project(props) {
     const setInactive = (e) => {
         e.stopPropagation()
         document.getElementById(props.id).classList.remove('active')
-        document.getElementById('close-arrow').style.transform = null
+        document.getElementById(props.id + 'close-arrow').style.transform = null
     }
-
-    console.log(props.details)
 
     return (
         <div className='project' onClick={setActive} id={props.id}>
