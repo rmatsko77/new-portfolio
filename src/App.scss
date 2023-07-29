@@ -11,7 +11,7 @@
 
 body {
   background-color: #ECD7CD;
-  font-family: monospace;
+  font-family: montserrat;
   overflow: hidden;
 }
 
@@ -30,7 +30,7 @@ a:visited {
 .header {
   position: fixed;
   width: 100%;
-  height: 6vh;
+  height: 7vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -71,14 +71,15 @@ a:visited {
   position: relative;
   padding: 1.5rem 2rem;
   display: flex;
-  align-items: start;
+  align-items: center;
   justify-content: center;
-  top: 10vh;
-  width: 150rem;
-  height: 90vh;
+  top: 0;
+  width: 160rem;
+  height: 88vh;
   z-index: 0;
   scroll-behavior: smooth;
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: visible;
 
   .arrow {
     position: fixed;
@@ -103,18 +104,21 @@ a:visited {
   .project {
     @include flexCenter();
     position: relative;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-direction: column;
-    height: 40vh;
+    height: 45vh;
     margin: 1rem;
-    padding: .6rem;
+    padding: 1rem 0;
+    top: 0;
     padding-bottom: 1rem;
     background-color: #7E6C6C;
     border-radius: 8pt;
     cursor: pointer;
+    transition: top .5s;
+
 
     &:hover .background {
-      top: 15%;
+      top: 19%;
     }
 
     h2 {
@@ -129,9 +133,9 @@ a:visited {
       position: absolute;
       @include flexCenter();
       flex-direction: column;
-      top: 9%;
+      top: 11%;
       width: 100%;
-      height: 40vh;
+      height: 44vh;
       border-radius: 8pt;
       transition: all .5s;
       cursor: auto;
@@ -156,12 +160,12 @@ a:visited {
         list-style: disc;
         @include flexCenter();
         align-items: baseline;
-        justify-content: space-between;
+        justify-content: space-around;
         flex-direction: column;
-        padding-left: 1rem;
+        padding-left: 1.5rem;
         text-align: left;
         height: 17vh;
-        font-size: .9rem;
+        font-size: 1.1rem;
       }
 
       .links {
@@ -194,18 +198,20 @@ a:visited {
     }
 
     .image {
-      width: 100%;
+      width: 95%;
       background-color: black;
     }
   }
 
   .active {
+    top: -16%;
+
     &:hover .background {
       top: 78%;
     }
 
     .background {
-      top: 80%;
+      top: 81%;
 
       &:hover {
         top: 80%;
@@ -239,7 +245,7 @@ a:visited {
       border: 1pt solid black;
 
       &:hover {
-        width: 70%;
+        width: 80%;
         color: #f2f4f3;
         font-size: 5.5vh;
       }

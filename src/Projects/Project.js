@@ -20,6 +20,10 @@ function Project(props) {
 
     const setInactive = (e) => {
         e.stopPropagation()
+        if (!document.getElementById(props.id).classList.value.includes('active')) {
+            setActive()
+            return
+        }
         document.getElementById(props.id).classList.remove('active')
         document.getElementById(props.id + 'close-arrow').style.transform = null
     }
@@ -29,7 +33,7 @@ function Project(props) {
             <h2>{props.title}</h2>
             <img src={props.img} className='image'></img>
             <p className='description'>{props.description}</p>
-            <div className='background' style={{backgroundColor: props.backgroundColor}}>
+            <div className='background' style={{ backgroundColor: props.backgroundColor }}>
                 <ul className='details'>
                     <li>{props.details[1]}</li>
                     <li>{props.details[2]}</li>
