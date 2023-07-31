@@ -120,6 +120,10 @@ a:visited {
       border-radius: 20pt;
       transition: all .5s;
 
+      &:hover {
+        font-size: .9rem;
+      }
+
     }
   }
 }
@@ -294,6 +298,7 @@ a:visited {
             height: 3vh;
             background-color: #f2f4f3;
             font-size: .8rem;
+            color: black;
 
             &:hover {
               background-color: transparent;
