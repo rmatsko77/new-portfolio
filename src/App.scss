@@ -366,6 +366,7 @@ a:visited {
 
     #linked-in {
       position: relative;
+      color: black;
 
       &:hover {
         background-color: #39A0ED;
@@ -373,6 +374,7 @@ a:visited {
     }
 
     #github {
+      color: black;
 
       &:hover {
         background-color: #6F2DBD;
@@ -381,6 +383,7 @@ a:visited {
     }
 
     #instagram {
+      color: black;
 
       &:hover {
         background-color: rgb(255, 60, 93);
@@ -399,7 +402,7 @@ a:visited {
   }
 }
 
-@media only screen and (max-width: 420px) {
+@media only screen and (max-width: 430px) {
 
   .navbar-container {
 
