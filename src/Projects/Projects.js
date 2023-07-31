@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import Project from './Project'
+import { MdKeyboardArrowRight } from 'react-icons/md'
 
 function Projects() {
+
+  const containerRef = useRef(null)
 
   const projects = [
     {
@@ -104,8 +107,14 @@ function Projects() {
     },
   ]
 
+  const handleScroll = () => {
+    if (containerRef.current) {
+      containerRef.current.scrollLeft += 900
+    }
+  }
+
   return (
-    <div className='projects-container'>
+    <div className='projects-container' ref={containerRef}>
       <div className='projects'>
         {projects.map(project =>
           <Project
@@ -119,7 +128,7 @@ function Projects() {
             repo={project.repo}
           />
         )}
-        {/*<div className='arrow' onClick={handleScroll}><MdKeyboardArrowRight /></div>*/}
+        <div className='arrow' onClick={handleScroll}><MdKeyboardArrowRight /></div>
       </div>
     </div>
 
