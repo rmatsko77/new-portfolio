@@ -1,6 +1,7 @@
 import React, { useRef } from 'react'
 import Project from './Project'
 import { MdKeyboardArrowRight } from 'react-icons/md'
+import { motion } from 'framer-motion'
 
 function Projects() {
 
@@ -114,7 +115,13 @@ function Projects() {
   }
 
   return (
-    <div className='projects-container' ref={containerRef}>
+    <motion.div
+      className='projects-container'
+      ref={containerRef}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       <div className='projects'>
         {projects.map(project =>
           <Project
@@ -130,7 +137,7 @@ function Projects() {
         )}
         <div className='arrow' onClick={handleScroll}><MdKeyboardArrowRight /></div>
       </div>
-    </div>
+    </motion.div>
 
 
   )

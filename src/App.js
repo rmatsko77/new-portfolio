@@ -1,10 +1,9 @@
 import './App.scss';
-import Projects from './Projects/Projects';
 import Header from './Header';
 import Contact from './Contact';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import About from './About';
+import { BrowserRouter } from 'react-router-dom';
 import NavBar from './NavBar';
+import AnimatedRoutes from './AnimatedRoutes';
 
 function App() {
   return (
@@ -12,10 +11,7 @@ function App() {
       <div className="App">
         <Header />
         <NavBar />
-        <Routes>
-          <Route path='/' element={<About />}></Route>
-          <Route path='/projects' element={<Projects />}></Route>
-        </Routes>
+        <AnimatedRoutes />
         <Contact />
       </div>
     </BrowserRouter>
