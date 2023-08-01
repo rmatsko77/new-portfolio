@@ -118,7 +118,8 @@ a:visited {
       width: 40%;
       height: 5vh;
       border-radius: 20pt;
-      transition: all .5s;
+      transition: all .25s;
+      color: black;
 
       &:hover {
         font-size: .9rem;
